@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>豆瓣读书x浙江图书馆</title>
+    <style>
+        body {
+            align-items: center;
+            /* Default to light background */
+            background-color: #ffffff;
+            display: flex;
+            /* Douban font */
+            font: 14px Helvetica,Arial,sans-serif;
+            justify-content: center;
+            margin: 0;
+            padding: 10px;
+            width: 300px;
+        }
+        /* If the user has selected a dark theme, use a dark background */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #333333;
+                color: #ffffff;
+                a { color: #75b6e7; }
+                a:visited { color: #ac7ee1; }
+                a:hover { color: #278cda; }
+                a:active { color: #0078d4; }
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <p><a href="https://www.zjlib.cn/fwjyzn/55113.htm" target="_blank">“信阅”</a>是浙江图书馆提供的<a href="https://www.gov.cn/xinwen/2019-01/21/content_5359873.htm" target="_blank">面向全国</a>的互联网图书借阅功能。</p>
+        <p>本插件在豆瓣图书详情页展示“信阅”链接。当前图书如有库存，可一键直达“信阅”在线借阅。</p>
+    </div>
+</body>
+</html>

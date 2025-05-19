@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "豆瓣读书x浙江图书馆",
+  "description": "本插件在豆瓣图书详情页展示“信阅”链接。当前图书如有库存，可一键直达“信阅”在线借阅。",
+  "version": "1.0.2",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "default_locale": "zh_CN",
+  "action": {
+    "default_icon": {
+      "16": "icons/zjlib16.png",
+      "32": "icons/zjlib32.png",
+      "48": "icons/zjlib48.png",
+      "128": "icons/zjlib128.png"
+    },
+    "default_popup": "popup/popup.html",
+    "default_title": "豆瓣读书x浙江图书馆"
+  },
+  "content_scripts": [
+    {
+        "matches": [
+          "https://book.douban.com/subject/*"
+        ],
+        "js": ["content.js"]
+    }
+  ],
+  "host_permissions": ["https://ulib.interlib.cn/*"]
+}
