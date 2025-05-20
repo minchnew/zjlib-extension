@@ -1,0 +1,12 @@
+{
+  "name": "douban-zjlib-chrome-extension",
+  "version": "1.0.0",
+  "description": "Chrome extension to show Zhejiang Library availability on Douban book pages",
+  "private": true,
+  "scripts": {
+    "build": "mkdir -p dist && cp -r manifest.json *.js icons/ popup/ _locales/ dist/",
+    "package": "cd dist && zip -r ../zjlib-chrome.zip *"
+  },
+  "author": "",
+  "license": "MIT"
+} 

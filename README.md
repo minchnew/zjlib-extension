@@ -1,6 +1,6 @@
 # 豆瓣读书x浙江图书馆
 
-This is an Edge browser extension that adds an HTML snippet to the web pages visited by the user. The HTML snippet renders data from an Ajax API call.
+This is a Chrome extension that adds an HTML snippet to the web pages visited by the user. The HTML snippet renders data from an Ajax API call.
 
 ## Features
 
@@ -10,7 +10,7 @@ This is an Edge browser extension that adds an HTML snippet to the web pages vis
 
 ## How to Use
 
-1. Install the extension in your Edge browser.
+1. Install the extension in your Chrome browser.
 2. Navigate to a web page where you want the HTML snippet to be added.
 3. Click on the extension icon in the toolbar to activate it.
 4. The extension will automatically add the HTML snippet to the web page and make an Ajax API call to fetch data.
