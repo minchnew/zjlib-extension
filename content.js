@@ -11,7 +11,7 @@ function renderInStock(data) {
           <div class="vendor-name">
             <a
               target="_blank"
-              href="https://ulib.interlib.cn/tcshop/1111/index"
+              href="https://loan.zjlib.cn"
             >
               <span>信阅</span>
             </a>
@@ -22,7 +22,7 @@ function renderInStock(data) {
             <div class="cell price-wrapper">
               <a
                 target="_blank"
-                href="https://ulib.interlib.cn/tcshop/1111/product/${data.id}"
+                href="https://loan.zjlib.cn/book-detail?id=${data.id}&identification=${data.identification}"
               >
                 <span class="buylink-price"> ${data.price}元 </span>
               </a>
@@ -30,7 +30,7 @@ function renderInStock(data) {
             <div class="cell">
               <a
                 target="_blank"
-                href="https://ulib.interlib.cn/tcshop/1111/product/${data.id}"
+                href="https://loan.zjlib.cn/book-detail?id=${data.id}&identification=${data.identification}"
                 class="buy-book-btn paper-book-btn"
               >
                 <span>借阅纸质书</span>
@@ -58,7 +58,7 @@ function renderEmpty() {
           <div class="vendor-name">
             <a
               target="_blank"
-              href="https://ulib.interlib.cn/tcshop/1111/index"
+              href="https://loan.zjlib.cn"
             >
               <span>信阅</span>
             </a>
@@ -69,7 +69,7 @@ function renderEmpty() {
             <div class="cell price-wrapper">
               <a
                 target="_blank"
-                href="https://ulib.interlib.cn/tcshop/1111/index"
+                href="https://loan.zjlib.cn"
               >
               <span class="buylink-price">无库存</span>
               </a>
@@ -100,10 +100,11 @@ window.addEventListener("load", function () {
         return;
       }
 
-      if (response.data.total > 0) { // in stock
+      const page = response.data.data.page;
+      if (page.total > 0) { // in stock
         document
           .getElementById("buyinfo")
-          .insertAdjacentHTML("beforebegin", renderInStock(response.data.list[0]));
+          .insertAdjacentHTML("beforebegin", renderInStock(page.records[0]));
       } else { // out of stock
         document
           .getElementById("buyinfo")

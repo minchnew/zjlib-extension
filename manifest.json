@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "豆瓣读书x浙江图书馆",
   "description": "本插件在豆瓣图书详情页展示信阅链接。当前图书如有库存，可一键直达信阅在线借阅。",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "default_locale": "zh_CN",
   "icons": {
     "16": "icons/zjlib16.PNG",
@@ -33,5 +33,5 @@
     }
   ],
   "permissions": [],
-  "host_permissions": ["https://ulib.interlib.cn/*"]
+  "host_permissions": ["https://loan.zjlib.cn/*"]
 }

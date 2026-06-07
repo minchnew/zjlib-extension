@@ -1,6 +1,12 @@
 function searchByISBN(isbn, callback) {
-    // Make a fetch request
-    fetch(`https://ulib.interlib.cn/tcshop/m/1111/product/productList?key=${isbn}&offset=0&bookType=0`)
+    fetch('https://loan.zjlib.cn/bff-api/jeeshop-admin-service/portal-pc-api/home/search', {
+        method: 'POST',
+        headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json',
+        },
+        body: JSON.stringify({ identification: '', isbn: isbn, current: 1, size: 30 }),
+    })
         .then(response => {
             if (response.ok) {
                 return response.json();
@@ -16,22 +22,6 @@ function searchByISBN(isbn, callback) {
         });
 }
 
-function checkStock(id, callback) {
-    fetch(`https://ulib.interlib.cn/tcshop/m/1111/product/${id}`)
-        .then(response => response.text())
-        .then(html => {
-            if (html.indexOf('<div class="bIntrInfo fn-left" id="stock_span">有货</div>')) {
-                callback(null, 1);
-            } else {
-                callback(null, 0);
-            }
-        })
-        .catch(error => {
-            callback(error);
-        });
-}
-
-// Listening for an event with chrome.runtime.onMessage.addListener, and then executing the searchByISBN function and send the response back
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
         if (request.action == "fetchAndRenderData") {
